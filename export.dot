@@ -1,0 +1,67 @@
+graph {
+	graph [pad="1"];
+	labelloc=t;
+	labeljust=l;
+	label="Class: UserRepository"
+	nodesep=0.5;
+	node [shape=plaintext]
+		 {rank=same; API_User -- UserRepository -- API_Server [color=transparent] rankdir=LR};
+		 UserRepository:getuser -- API_User:blank [color=cornflowerblue];
+		API_Server:constructor -- UserRepository:blank[style=dotted];
+		 UserRepository:add -- API_User:blank [color=cornflowerblue];
+		 UserRepository:getnonisensixusers -- API_User:blank [color=cornflowerblue];
+		 UserRepository:getusers -- API_User:blank [color=cornflowerblue];
+		 UserRepository:constructor -- API_Server:blank [color=cornflowerblue];
+		API_Server:constructor -- UserRepository:blank [style=dotted];
+		API_User:getuser -- UserRepository:blank[style=dotted];
+		 UserRepository:filter -- API_User:blank [color=cornflowerblue];
+		node[shape=plaintext]
+		UserRepository [
+		label=<
+		<table border='1' cellborder='0'>
+		<tr border='0'><td border='0' bgcolor="cornflowerblue" port="0"><font color='white'>UserRepository</font></td></tr>
+		<tr border='0'><td border='0'>+ server</td></tr><tr border='0'><td border='0'>+ user_repository</td></tr>
+		<tr border='0'><td border='0' port='blank'>&nbsp;</td></tr>
+					<tr border='0'><td border='0' port='constructor'><font color="cornflowerblue">+ constructor()</font></td></tr>
+<tr border='0'><td border='0' port='0'>+ hasUser()</td></tr>			<tr border='0'><td border='0' port='getuser'><font color="cornflowerblue">+ getUser()</font></td></tr>
+<tr border='0'><td border='0' port='1'>+ getCount()</td></tr>			<tr border='0'><td border='0' port='add'><font color="cornflowerblue">+ add()</font></td></tr>
+			<tr border='0'><td border='0' port='getusers'><font color="cornflowerblue">+ getUsers()</font></td></tr>
+			<tr border='0'><td border='0' port='getnonisensixusers'><font color="cornflowerblue">+ getNonIsensixUsers()</font></td></tr>
+			<tr border='0'><td border='0' port='filter'><font color="cornflowerblue">+ filter()</font></td></tr>
+
+		</table>
+		>];
+		node[shape=plaintext]
+		API_Server [
+		label=<
+		<table border='1' cellborder='0'>
+		<tr border='0'><td border='0' bgcolor="black"><font color='white'>API_Server</font></td></tr>
+		<tr border='0'><td border='0'>+ use_external_json_lib</td></tr><tr border='0'><td border='0'>+ server_id</td></tr><tr border='0'><td border='0'>+ server_version</td></tr><tr border='0'><td border='0'>+ ip_addr</td></tr><tr border='0'><td border='0'>...</td></tr>
+		<tr border='0'><td border='0' port='blank'>&nbsp;</td></tr>
+		<tr border='0'><td border='0' port='0'>+ constructor()</td></tr>			<tr border='0'><td border='0' port='constructor'><font color="cornflowerblue">+ constructor()</font></td></tr>
+<tr border='0'><td border='0' port='1'>+ getBASEURL()</td></tr><tr border='0'><td border='0' port='2'>+ isGuardian22()</td></tr><tr border='0'><td border='0' port='3'>+ fromReferenceId()</td></tr><tr border='0'><td border='0' port='4'>...</td></tr>
+		</table>
+		>];
+		node[shape=plaintext]
+		API_Server [
+		label=<
+		<table border='1' cellborder='0'>
+		<tr border='0'><td border='0' bgcolor="black"><font color='white'>API_Server</font></td></tr>
+		<tr border='0'><td border='0'>+ use_external_json_lib</td></tr><tr border='0'><td border='0'>+ server_id</td></tr><tr border='0'><td border='0'>+ server_version</td></tr><tr border='0'><td border='0'>+ ip_addr</td></tr><tr border='0'><td border='0'>...</td></tr>
+		<tr border='0'><td border='0' port='blank'>&nbsp;</td></tr>
+		<tr border='0'><td border='0' port='0'>+ constructor()</td></tr>			<tr border='0'><td border='0' port='constructor'><font color="cornflowerblue">+ constructor()</font></td></tr>
+<tr border='0'><td border='0' port='1'>+ getBASEURL()</td></tr><tr border='0'><td border='0' port='2'>+ isGuardian22()</td></tr><tr border='0'><td border='0' port='3'>+ fromReferenceId()</td></tr><tr border='0'><td border='0' port='4'>...</td></tr>
+		</table>
+		>];
+		node[shape=plaintext]
+		API_User [
+		label=<
+		<table border='1' cellborder='0'>
+		<tr border='0'><td border='0' bgcolor="black"><font color='white'>API_User</font></td></tr>
+		<tr border='0'><td border='0'>+ user_id</td></tr><tr border='0'><td border='0'>+ user_name</td></tr><tr border='0'><td border='0'>+ user_description</td></tr><tr border='0'><td border='0'>+ user_email</td></tr><tr border='0'><td border='0'>...</td></tr>
+		<tr border='0'><td border='0' port='blank'>&nbsp;</td></tr>
+		<tr border='0'><td border='0' port='0'>+ constructor()</td></tr>			<tr border='0'><td border='0' port='getuser'><font color="cornflowerblue">+ getUser()</font></td></tr>
+<tr border='0'><td border='0' port='1'>+ getNotificationInfo()</td></tr><tr border='0'><td border='0' port='2'>+ getRefId()</td></tr><tr border='0'><td border='0' port='3'>+ isIsensixUser()</td></tr><tr border='0'><td border='0' port='4'>...</td></tr>
+		</table>
+		>];
+	}
